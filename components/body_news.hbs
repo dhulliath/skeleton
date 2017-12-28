@@ -1,0 +1,23 @@
+{{#news}}
+{{#each this.entries}}
+{{#if content.publication.published}}
+<a href="/news/{{page_slug}}">
+    <div class="container news">
+
+        <h3>
+            {{content.title}}
+        </h3>
+        <div class="teaser">
+            {{content.teaser.description}}
+        </div>
+
+        <div class="date">
+            {{content.publication.date}}
+        </div>
+    </div>
+</a>
+{{/if}} {{/each}} {{#unless this.entries.length}}
+<div class="container">
+    There is no news.
+</div>
+{{/unless}} {{>news_pagination}} {{/news}}

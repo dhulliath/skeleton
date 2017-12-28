@@ -1,0 +1,16 @@
+#{$originTarget} .signs .label {
+    font-size: 175px;
+    font-weight: 900;
+    text-anchor: middle;
+    font-variant: small-caps;
+    letter-spacing: 50px;
+    stroke-width: 10;
+}
+
+#{$originTarget} .signs .block {
+    stroke-width: 30;
+}
+
+#{$originTarget} .signs .glyph {
+    stroke-width: 20;
+}

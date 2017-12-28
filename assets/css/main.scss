@@ -1,0 +1,93 @@
+$gutters: 20px;
+$element-margin: 5px;
+$border-width: 2px;
+$border-width-image: 1px;
+$border-round: 8px;
+$menuBG: '#254441';
+$menuLinkHoverBG: '#000000';
+$nav-height: '60px';
+$header-height: '200px';
+
+$breakpoints: ( 'hidpiphone': 320px, 'xsmall': 480px, 'small': 768px, 'medium': 992px, 'large': 1200px);
+@mixin respond-to-min($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+@mixin respond-to-max($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: (#{map-get($breakpoints, $breakpoint)} + 1)) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+body {
+    margin: 0;
+    background-color: #888;
+    background-repeat: repeat;
+}
+
+h1,h2,h3,h4,h5 {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+article {
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
+    padding: $gutters;
+    min-height: calc(100vh - #{$nav-height} - #{$header-height} - #{$gutters * 2});
+    @include respond-to-min('medium') {
+        max-width: 992px;
+        margin: auto;
+    }
+}
+
+.fl-left {
+    float: left;
+}
+
+.fl-right {
+    float: right;
+}
+.al-center {
+    display: block;
+    margin: auto;
+}
+.al-right {
+    display: block;
+    margin: auto;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+}
+a .news {
+    color: black;
+}
+a .news:active {
+    box-shadow: 0 0 5px #444;
+}
+
+@import "main/text";
+@import "main/colors";
+@import "main/borders";
+@import "main/header";
+//@import "main/menu";
+@import 'main/nav';
+@import 'main/images';
+@import 'main/depthshading';
+@import 'main/news';

@@ -1,0 +1,40 @@
+<!-- class="cl-bg-{{#if page.navigation_color.class}}{{page.navigation_color.class}}{{else}}{{global.navigation.styling.navigation_color.class}}{{/if}}"-->
+<nav>
+    <a href="/" class="logo">{{global.site_title}}</a>
+
+    <label for="drop" class="toggle">Menu</label>
+    <input type="checkbox" id="drop" />
+    <ul class="menu">
+        {{#each global.navigation.items}}
+        <li>
+            {{#if items}}<label for="drop-{{slug title}}" class="toggle">{{title}} +</label>{{/if}}
+            <a href="{{href}}">
+                {{title}}
+            </a>
+            {{#if items}}
+                <input type="checkbox" id="drop-{{slug title}}" />
+                <ul>
+                    {{#each items}}
+                    <li>
+                        <a href="{{href}}">
+                            {{title}}
+                        </a>
+                        {{#if items}}
+                        <ul>
+                            {{#each items}}
+                            <li>
+                                <a href="{{href}}">
+                                    {{title}}
+                                </a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</nav>

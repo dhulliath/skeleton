@@ -1,0 +1,38 @@
+$colors: (
+    red: #d00,
+    orange: #fa0,
+    yellow: #ff0,
+    green: #0d0,
+    cyan: #0dd,
+    blue: #00d,
+    purple: #d0d,
+    pink: #dac,
+    brown: #900,
+    grey: #777
+);
+
+$color-shade-adjust: 15%;
+
+@each $name, $color in $colors {
+    .cl-#{$name} {
+        color: #{$color};
+        border-color: #{$color};
+    }
+    .cl-#{$name}-dark {
+        color: darken($color, $color-shade-adjust);
+        border-color: darken($color, $color-shade-adjust);
+    }
+    .cl-#{$name}-light, a.cl-#{$name}:active {
+        color: lighten($color, $color-shade-adjust);
+        border-color: lighten($color, $color-shade-adjust);
+    }
+    .cl-bg-#{$name} {
+        background: linear-gradient(to bottom right, lighten($color, $color-shade-adjust), darken($color, $color-shade-adjust));
+    }
+    .cl-bg-dark-#{$name}, .cl-bg-#{$name} > a:hover {
+        background-color: darken($color, $color-shade-adjust);
+    }
+    .cl-bg-light-#{$name}, a.cl-bg-#{$name}:active, .cl-bg-#{$name} > a:active {
+        background-color: lighten($color, $color-shade-adjust);
+    }
+}

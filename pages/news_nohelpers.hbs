@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{global.site_title}}{{#if title}} - {{title}}{{/if}}</title>
+		{{>head_includes}}
+	</head>
+	<body>
+		{{>body_header}}
+		{{>body_nav}}
+        <article>
+        {{>body_news}}
+		</article>
+		{{>body_footer}}
+	</body>
+
+	{{!-- <script data-main="/assets/js/main.js" src="/assets/vendor/requirejs/require.js"></script> --}}
+</html>

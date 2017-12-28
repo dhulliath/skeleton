@@ -1,0 +1,16 @@
+.pagination .previous {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.pagination .previous:before {
+    content: '<< ';
+}
+.pagination .next {
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+.pagination .next:after {
+    content: ' >>';
+}

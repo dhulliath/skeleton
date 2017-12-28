@@ -1,0 +1,28 @@
+
+
+$borders: (
+    'top': 'top-',
+    'bottom': 'bottom-',
+    'left': 'left-',
+    'right': 'right-',
+    'all': ''
+);
+
+
+
+
+@each $name, $border in $borders {
+    .bdr-#{$name} {
+        border-#{$border}style: solid;
+        border-width: $border-width;
+    }
+}
+
+.bdr-all {
+    border-width: $border-width / 2;
+    box-shadow: 0 0 $border-width ($border-width / 2) rgba(0.8,0.8,0.8,0.5);
+}
+
+.bdr-round {
+    border-radius: $border-round;
+}

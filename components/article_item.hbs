@@ -1,0 +1,22 @@
+{{#if graphic.image}}
+<img src="{{graphic.image}}" class="{{styling.size.class}}{{#if styling.floating.class}} {{styling.floating.class}}{{/if}}{{#if bordering.border.class}} {{bordering.border.class}}{{/if}}{{#if bordering.rounded}} bdr-round{{/if}} cl-{{bordering.border_color.class}}"
+/> 
+{{/if}}
+
+{{#if header}}
+<{{styling.size.header}} class="{{styling.size.class}}{{#if bordering.rounded}} bdr-round{{/if}}{{#if bordering.border.class}} {{bordering.border.class}}{{/if}}{{#if styling.dividing}} dividing{{/if}}{{#if graphics.color.class}} cl-{{graphics.color.class}}{{/if}}{{#if graphics.background.class}} cl-bg-{{graphics.background.class}}{{/if}}">
+    {{#if graphics.icon.class}}
+    <i class="{{graphics.icon.class}} icon"></i>
+    {{/if}}
+    {{header}}
+</{{styling.size.header}}>
+{{/if}}
+{{#if text}}
+<p>{{{breaklines text}}}</p>
+{{/if}}
+{{#if doc}}
+<p>{{{abstracted_content.marked_doc}}}</p>
+{{/if}}
+{{#if loremcount}}
+<p>{{lorem loremcount}}</p>
+{{/if}}

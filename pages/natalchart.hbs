@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{global.site_title}}{{#if title}} - {{title}}{{/if}}</title>
+		{{>head_includes}}
+        <link rel="stylesheet" type="text/css" href="/assets/css/orrery.css" />
+	</head>
+	<body>
+		{{>body_header}}
+		{{>body_nav}}
+		<article>
+		{{#each planets}}
+            <div class="orrery-desc" id="{{id}}">
+                <h1 class="bdr-bottom">{{data.label}}</h1>
+                <div class="two-column">
+                <h3>{{zodiacR}}</h3>
+                    {{{zodiac.abstracted_content.marked_doc}}}
+                    {{#if zodiac.source}}<a class="al-right" href="{{zodiac.source}}">source</a>{{/if}}
+                </div>
+                <div class="two-column">
+                    <h3>House {{houseR.numeral}}</h3>
+                    {{{house.abstracted_content.marked_doc}}}
+                    {{#if house.source}}<a class="al-right" href="{{house.source}}">source</a>{{/if}}
+                </div>
+                {{#each aspects}}
+                <div class="two-column">
+                    <h4>{{type}} with {{target}}</h4>
+                </div>
+                {{/each}}
+            </div>
+        {{/each}}
+		</article>
+		{{>body_footer}}
+	</body>
+
+	{{!-- <script data-main="/assets/js/main.js" src="/assets/vendor/requirejs/require.js"></script> --}}
+</html>

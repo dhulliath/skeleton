@@ -1,0 +1,13 @@
+$image-sizes: ( 'mini': 35px, 'tiny': 55px, 'small': 75px, 'medium': 200px, 'large': 450px, 'huge': 750px, 'fluid': 100%);
+img {
+    border-width: $border-width-image;
+    margin: $element-margin;
+    max-width: 100%;
+}
+
+@each $name,
+$image-size in $image-sizes {
+    img.sz-#{$name} {
+        width: #{$image-size};
+    }
+}

@@ -1,0 +1,12 @@
+#{$originTarget} .houses .label {
+    font-size: 120px;
+    stroke: #{$labelBackground};
+    text-anchor: middle;
+    font-variant: small-caps;
+    letter-spacing: 25px;
+}
+
+#{$originTarget} .houses .block {
+    stroke-width: 20;
+    fill: #{$labelBackground};
+}

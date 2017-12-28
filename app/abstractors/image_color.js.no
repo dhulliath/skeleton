@@ -1,0 +1,41 @@
+'use strict'
+//	placeholder abstractor
+
+var abstractor = function () {}
+
+const splashy = require('splashy')
+const util = require('util')
+const fs = require('fs')
+
+abstractor.prototype.init = function (context) {
+	return new Promise(function (resolve, reject) {
+
+		// initialize abstractor
+		resolve()
+	})
+}
+
+abstractor.prototype.abstract = function (context) {
+	return new Promise(function (resolve, reject) {
+		/*splashy
+  			.fromUrl(context.image_color)
+  			.then(predominantColors => console.log(predominantColors))*/
+		var path = enduro.project_path + context.image_color
+		console.log(path)
+		if (fs.existsSync(path)) {
+		var results = splashy().fromUrl(context.image_color)
+
+        context['$abstracted_content_hidden'] = true
+        context.abstracted_content = {}
+        context.abstracted_content.colors = results
+		}
+
+        /*splashy(context.image_color)
+			.then(predominantColors => context.abstracted_content.colors = predominantColors)*/
+		// abstract directive
+		return resolve()
+
+	})
+}
+
+module.exports = new abstractor()

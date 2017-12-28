@@ -1,0 +1,21 @@
+{
+  "name": "enduro_scaffolding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assets/vendor/enduro/index.js",
+  "scripts": {
+    "start": "node_modules/.bin/enduro start"
+  },
+  "author": "author goes here",
+  "license": "ISC",
+  "dependencies": {
+    "coordinate-tz": "^0.1.2",
+    "enduro": "*",
+    "enduro_quill": "^1.0.5",
+    "marked": "^0.3.7",
+    "moment-timezone": "^0.5.14",
+    "query-string": "^5.0.1",
+    "swisseph": "^0.5.8",
+    "zoneinfo": "^0.1.8"
+  }
+}

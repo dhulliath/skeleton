@@ -1,0 +1,24 @@
+$originTarget: '.ringZodiac';
+$labelBackground: black;
+$fontFace: 'Arial Black, Arial Bold, Gadget, sans-serif';
+
+@import 'orrery/planets';
+@import 'orrery/aspects';
+@import 'orrery/houses';
+@import 'orrery/zodiac';
+
+.orrery-image, .orrery-input {
+    position: relative;
+}
+
+.orrery-input * {
+    position: relative;
+}
+
+#{$originTarget} .label {
+    font-family: #{$fontFace};
+}
+
+#{$originTarget} .focused .label {
+    font-weight: bolder;
+}

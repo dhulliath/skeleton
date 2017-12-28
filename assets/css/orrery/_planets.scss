@@ -1,0 +1,12 @@
+#{$originTarget} .planets .block {
+    stroke-width: 20;
+    fill: #{$labelBackground};
+}
+
+#{$originTarget} .planets circle {
+    stroke-width: 30;
+}
+
+#{$originTarget} .planets .focused circle {
+    stroke-width:60;
+}

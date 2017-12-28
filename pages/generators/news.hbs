@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{global.site_title}}{{#if title}} - {{title}}{{/if}}</title>
+		<meta name="description" content="{{teaser.description}}">
+		{{>head_includes}}
+	</head>
+	<body>
+		{{>body_header}}
+		{{>body_nav}}
+		<article>
+			
+			{{>body_articles}}
+			<div class="subtitle">
+				Posted on {{publication.date}}
+			</div>
+		</article>
+		{{>body_footer}}
+	</body>
+
+	{{!-- <script data-main="/assets/js/main.js" src="/assets/vendor/requirejs/require.js"></script> --}}
+</html>

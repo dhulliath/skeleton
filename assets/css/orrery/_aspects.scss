@@ -1,0 +1,19 @@
+$aspects: (
+    conjunction: yellow,
+    opposition: orange,
+    square: red,
+    trine: lightblue,
+    sextile: lightgreen
+);
+
+#{$originTarget} .aspects path {
+    stroke-width: 15;
+    stroke-linecap: round;
+    fill: none;
+}
+
+@each $name, $aspect in $aspects {
+    #{$originTarget} .aspects path.#{$name} {
+        stroke: $aspect;
+    }
+}

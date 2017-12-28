@@ -1,0 +1,47 @@
+$menu-height: 40px;
+$menu-item-minwidth: 120px;
+
+.menu {
+    display: flex;
+    height: $menu-height;
+    width: 100%;
+    
+    
+}
+.menu .item {
+    width: $menu-item-minwidth;
+    display: inline-block;
+    text-align: center;
+    height: $menu-height;
+    vertical-align: bottom;
+    color: whitesmoke;
+    overflow: hidden;
+}
+.menu .item:hover {
+    display: block;
+    overflow: visible;
+    height: auto;
+    min-height: $menu-height;
+}
+
+.menu .dropdown {
+    position: relative;
+    display: inline-block;
+    min-height: $menu-height;
+    
+}
+.menu .dropdown .content {
+    display: none;
+    position: absolute;
+}
+
+.menu .dropdown:hover .content, .menu .dropdown:active .content {
+    display: block;
+    box-shadow: 0 0 2px 1px rgba(0.8,0.8,0.8,0.5);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.menu a {
+    text-decoration: none;
+}

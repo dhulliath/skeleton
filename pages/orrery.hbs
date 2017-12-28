@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{global.site_title}}{{#if title}} - {{title}}{{/if}}</title>
+	{{>head_includes}}
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="/assets/js/teleport-autocomplete.min.js"></script>
+	<script src="/assets/js/egtGeneric.js"></script>
+	<script src="/assets/js/egtAstro.js"></script>
+	<script src="/assets/js/astroEngineRender.js"></script>
+	<script src="/assets/js/astroEngineInterpret.js"></script>
+	<script src="/assets/js/astroData.js"></script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/orrery.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/teleport-autocomplete.min.css" />
+</head>
+
+<body>
+	{{>body_header}} 
+	{{>body_nav}} 
+	<article>
+    <svg class="orrery-image" xmlns="http://www.w3.org/2000/svg">
+    </svg>
+	<div class="orrery-input" id="inputControls" class="ui modal">
+        <div class="header">
+            Create Natal Chart
+        </div>
+        <div class="scrolling content">
+            <form class="ui form">
+                <div class="field">
+                    <label>Name</label>
+                    <div class="field">
+                        <input type="text" id="chartName" />
+                    </div>
+                </div>
+                <h4 class="ui dividing header">Birth Place</h4>
+                <div class="fields">
+                    <div class="eight wide field">
+                        <label>City</label>
+                        <input type="text" id="chartBirthplace" autocomplete="off" />
+                    </div>
+                    <div class="four wide field">
+                        <label>Latitude</label>
+                        <input type="text" readonly="" id="chartLatitude" />
+                    </div>
+                    <div class="four wide field">
+                        <label>Longitude</label>
+                        <input type="text" readonly="" id="chartLongitude" />
+                    </div>
+                    <input type="hidden" id="chartTZOffset" />
+                </div>
+                <h4 class="ui dividing header">Birth Date</h4>
+                <div class="three fields">
+                    <div class="field">
+                        <label>Day</label>
+                        <select class="ui dropdown" id="chartDateDay">
+                        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                    </select>
+                    </div>
+                    <div class="field">
+                        <label>Month</label>
+                        <select class="ui dropdown" id="chartDateMonth">
+                        <option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option>
+                    </select>
+                    </div>
+                    <div class="field">
+                        <label>Year</label>
+                        <input id="chartDateYear" class="input" type="number">
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Hour</label>
+                        <select class="ui dropdown" id="chartTimeHour">
+                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13(1PM)</option><option value="14">14(2PM)</option><option value="15">15(3PM)</option><option value="16">16(4PM)</option><option value="17">17(5PM)</option><option value="18">18(6PM)</option><option value="19">19(7PM)</option><option value="20">20(8PM)</option><option value="21">21(9PM)</option><option value="22">22(10PM)</option><option value="23">23(11PM)</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Minute</label>
+                        <select class="ui dropdown" id="chartTimeMinute">
+                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="Buttons" class="actions">
+            <button class="positive ui button" id="chartButtonSubmit">
+                Generate
+            </button>
+            <div class="ui button" id="chartButtonCancel">
+                Cancel
+            </div>
+            <div class="fb-share-button" data-href="https://astro.earlgraytease.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fastro.earlgraytease.com%2F&amp;src=sdkpreparse">Share</a></div>
+        </div>
+    </div>
+    <div id="modalAbout" class="ui modal">
+        <div class="header">
+            <i class="window close icon"></i> About
+        </div>
+        <div class="scrolling content">
+            This is still a work in progress. Interpretations are in various states of legibility and completeness. I'm interested in
+            receiving feedback regarding design and which information is provided. I'm also interested in anything which
+            causes this not to work. The bulk of interpretations listed here have been appropriated from other sources, they
+            will be removed at the author's request.
+            <h4 class="ui dividing header">Changelog</h4>
+            <div class="ui relaxed list">
+                <div class="item">
+                    <div class="header">November 14, 2017</div>
+                    Initial public release
+                </div>
+                <div class="item">
+                    <div class="header">November 15, 2017</div>
+                    Refined render engine, begin adding retrograde and house data
+                </div>
+                <div class="item">
+                    <div class="header">November 16, 2017</div>
+                    Mirrored the chart because dumb me didn't realize it was upside-down
+                </div>
+                <div class="item">
+                    <div class="header">December 2, 2017</div>
+                    Corrected webkit render error.<br/>
+                    Added more sign data.
+                </div>
+                <div class="item">
+                    <div class="header">December 3, 2017</div>
+                    Created interpretation link bar.<br/>
+                    Chart zooms on link bar item clicking.<br/>
+                    Chart reverse looks up city from coordinates, start of short URL system.
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui button close">Close</div>
+        </div>
+    </div>
+    <div id="interpretations">
+        <div class="navb">
+            <a class="nave" href="#" id="btnOpenChartModal">
+                <img src="svg/Icon-plus.svg" alt="New Chart" />
+            </a>
+            <a class="nave" href="#" id="btnOpenAbout">
+                <img src="svg/Icon-question.svg" alt="about" />
+            </a>
+        </div>
+    </div>
+    </article>
+	{{>body_footer}}
+	<script>
+        TeleportAutocomplete.init('#chartBirthplace').on('change', function (value) {
+            $('input#chartLatitude').val(value['latitude']);
+            $('input#chartLongitude').val(value['longitude']);
+            $('input#chartTZOffset').val(value['tzOffsetMinutes']);
+            console.log(value);
+        });
+
+        var Orrery = new AstroEngineRender('.orrery-image');
+        var OrreryInterpret = new AstroEngineInterpret('#interpretations');
+
+        Orrery.loadData('houses', DataHouses);
+        Orrery.loadData('zodiacs', DataAstroSigns);
+        Orrery.loadData('planets', DataPlanets);
+        Orrery.drawChartBase();
+
+        OrreryInterpret.loadData('render', DataRender);
+        OrreryInterpret.drawTable();
+        for (renderKey in OrreryInterpret.DOMobjects['navbar']['objects']) {
+            OrreryInterpret.DOMobjects['navbar']['objects'][renderKey]['block'].addEventListener('click', function () {
+                var goKey = this.getAttribute('d');
+                Orrery.focusOnPlanet(goKey);
+                OrreryInterpret.focusOnPlanet(goKey);
+            });
+        }
+
+        function updateInfoBox(data, callbackOptions) {
+            OrreryInterpret.updateText(callbackOptions['planet'], callbackOptions['type'], callbackOptions['header'],
+                data);
+        }
+
+        function updateChart(chartObj, interpObj, data) {
+            chartObj.focusNone();
+            interpObj.focusNone();
+            chartObj.updateChart(data);
+            interpObj.updateChart(data);
+        }
+
+        function loadFromInputs(updateURL = true) {
+            egtAstro.queryAPI($('input#chartLatitude').val(),
+                $('input#chartLongitude').val(),
+                $("#chartDateYear").val(),
+                $("#chartDateMonth").val(),
+                $("#chartDateDay").val(),
+                $("#chartTimeHour").val(),
+                $("#chartTimeMinute").val(), true, 'v3beta',
+                function (data) {
+                    var queryReplacer = {
+                        'longitude': 'o',
+                        'latitude': 'a',
+                        'minute': 'm',
+                        'hour': 'h',
+                        'day': 'D',
+                        'month': 'M',
+                        'year': 'Y'
+                    }
+                    var queryArgs = {};
+                    for (arg in data['queryString']) {
+                        if (queryReplacer[arg]) {
+                            queryArgs[queryReplacer[arg]] = data['queryString'][arg];
+                        }
+                    }
+                    queryArgs['n'] = $("#chartName").val();
+                    egtGeneric.updatePageURL('q=' + egtGeneric.uriEncode(JSON.stringify(queryArgs)));
+                    updateChart(Orrery, OrreryInterpret, data);
+                });
+        }
+
+        function reverseGeocode(latitude, longitude, updateQuery) {
+            egtGeneric.getFileAndCall('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' +
+                longitude,
+                _updateReverseGeocode, {
+                    'updateQuery': updateQuery,
+                    'mimeType': 'application/json'
+                });
+        }
+
+        function _updateReverseGeocode(data, options) {
+            var results = JSON.parse(data);
+            var parsed = [];
+            for (key1 in results['results']) {
+                for (key2 in results['results'][key1]['address_components']) {
+                    for (key3 in results['results'][key1]['address_components'][key2]['types']) {
+                        var targetIndex = -1;
+                        var targetType = results['results'][key1]['address_components'][key2]['types'][key3]
+                        if (targetType == 'administrative_area_level_1') {
+                            targetIndex = 1;
+                        }
+                        if (targetType == 'locality') {
+                            targetIndex = 0;
+                        }
+                        if (targetType == 'country') {
+                            targetIndex = 2;
+                        }
+
+                        if (targetIndex >= 0) {
+                            parsed[targetIndex] = results['results'][key1]['address_components'][key2]['long_name'];
+                        }
+                    }
+                }
+            }
+            document.querySelector(options['updateQuery']).value = parsed.join(', ');
+        }
+
+        function loadFromGetArgs() {
+            var uriKey = egtGeneric.getUrlParameter("q");
+            if (uriKey) {
+                var query = egtGeneric.uriDecode(uriKey);
+            } else {
+                var query = {
+                    'D': egtGeneric.getUrlParameter("day"),
+                    'M': egtGeneric.getUrlParameter("month"),
+                    'Y': egtGeneric.getUrlParameter("year"),
+                    'h': egtGeneric.getUrlParameter("hour"),
+                    'm': egtGeneric.getUrlParameter("minute"),
+                    'n': egtGeneric.getUrlParameter("chartName"),
+                    'a': egtGeneric.getUrlParameter("latitude"),
+                    'o': egtGeneric.getUrlParameter("longitude")
+                }
+                $("#chartDateDay").val(query['D']);
+                $("#chartDateMonth").val(query['M']);
+                $("#chartDateYear").val(query['Y']);
+                $("#chartTimeHour").val(query['h']);
+                $("#chartTimeMinute").val(query['m']);
+                $("#chartName").val(query['n']);
+                $('input#chartLatitude').val(query['a']);
+                $('input#chartLongitude').val(query['o']);
+            }
+            loadFromInputs(false);
+        }
+
+        function chartSave(id, name, query) {
+            var chartStorage = JSON.parse(localStorage.getItem("charts"));
+            if (!chartStorage) {
+                chartStorage = {};
+            }
+            chartStorage[id] = query;
+            chartStorage[id]['title'] = name;
+            localStorage.setItem("charts", JSON.stringify(chartStorage));
+        }
+
+        function chartLoad(id) {
+            var chartStorage = JSON.parse(localStorage.getItem("charts"));
+            var chartData = chartStorage[id];
+            $('input#chartLatitude').val(chartData['latitude']);
+            $('input#chartLongitude').val(chartData['longitude']);
+            $('#chartTimeMinute').val(chartData['minute']);
+            $('#chartTimeHour').val(chartData['hour']);
+            $('#chartDateDay').val(chartData['day']);
+            $('#chartDateMonth').val(chartData['month']);
+            $('#chartDateYear').val(chartData['year']);
+            $('#chartname').val(chartData['name']);
+        }
+
+        $('document').ready(function () {
+            /*$('#inputControls').modal();
+            $('#modalAbout').modal();
+            $('#btnOpenChartModal').click(function () {
+                $('#inputControls').modal('show');
+            });
+            $('#btnOpenAbout').click(function () {
+                $('#modalAbout').modal('show');
+            });
+            $('#modalAbout .close').click(function() {
+                $('#modalAbout').modal('hide');
+            })*/
+
+            loadFromGetArgs();
+            reverseGeocode($('input#chartLatitude').val(), $('input#chartLongitude').val(), '#chartBirthplace');
+
+            $('#chartButtonSubmit').click(function () {
+                $('#inputControls').modal('hide');
+                loadFromInputs();
+            });
+        });
+    </script>
+</body>
+
+{{!--
+<script data-main="/assets/js/main.js" src="/assets/vendor/requirejs/require.js"></script> --}}
+
+</html>
