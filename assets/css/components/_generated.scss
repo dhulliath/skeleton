@@ -1,0 +1,25 @@
+@each $col, $cval in $colors {
+	@each $app, $akey in $color-applications {
+		.#{$app}-col-#{$col} {
+			#{$akey}: #{$cval};
+		} 
+	}
+}
+
+@each $value in $text-alignments {
+	.txt-al-#{$value} {
+		text-align: #{$value};
+	}
+}
+
+@each $name, $value in $text-sizes {
+	.txt-sz-#{$name} {
+		text-size: #{$value};
+	}
+}
+
+@each $name, $value in $widths {
+	.wd-#{$name} {
+		width: $value;
+	}
+}
