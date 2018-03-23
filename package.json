@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "assets/vendor/enduro/index.js",
 	"scripts": {
-		"start": "node_modules/.bin/enduro start"
+		"start": "node_modules/.bin/enduro start",
+		"dev": "node_modules/.bin/enduro dev"
 	},
 	"author": "Peter Olejniczak",
 	"license": "private",
