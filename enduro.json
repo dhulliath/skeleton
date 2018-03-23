@@ -1,0 +1,9 @@
+{
+	"project_name": "melua site",
+	"project_slug": "mlc",
+	"s3": {
+		"bucket": "enduro.sethere",
+		"region": "eu-west-1"
+	},
+	"juicebox_enabled": false
+}

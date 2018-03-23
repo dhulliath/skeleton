@@ -1,0 +1,15 @@
+{
+	"name": "meluasite",
+	"version": "1.0.0",
+	"description": "",
+	"main": "assets/vendor/enduro/index.js",
+	"scripts": {
+		"start": "node_modules/.bin/enduro start"
+	},
+	"author": "Peter Olejniczak",
+	"license": "private",
+	"private": true,
+	"dependencies": {
+		"enduro": "*"
+	}
+}
