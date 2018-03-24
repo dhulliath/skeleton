@@ -1,7 +1,7 @@
 ({
 	sass: {
 		color: {
-			accent: 'navyblue',
+			accent: 'blue',
 			trim: 'pink'
 		},
 		margins: {
