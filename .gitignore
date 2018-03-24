@@ -2,6 +2,7 @@
 .vscode
 _generated
 .enduro_secure
+package-lock.json
 
 # Logs
 logs
