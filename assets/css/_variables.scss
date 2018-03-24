@@ -1,15 +1,3 @@
-$colors: (
-	accent: 'navyblue',
-	trim: 'pink'	
-);
-
-$text-alignments: (left, right, center, justify);
-
-$text-sizes: (
-	normal: '1em',
-	big: '2em',
-	huge: '3em');
-
 $color-applications: (
 	txt: 'color',
 	bdr: 'border-color',
@@ -21,3 +9,9 @@ $widths: (
 	third: 33%,
 	quarter: 25%,
 	fifth: 20%);
+
+$viewports: (
+	mobile: (0px, 480px),
+	tablet: (481px, 720px),
+	desktop: (721px, null));
+

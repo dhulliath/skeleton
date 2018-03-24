@@ -11,6 +11,8 @@
 	"license": "private",
 	"private": true,
 	"dependencies": {
-		"enduro": "*"
+		"enduro": "*",
+		"json-sass": "^1.3.5",
+		"marked": "^0.3.18"
 	}
 }

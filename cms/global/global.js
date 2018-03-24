@@ -34,14 +34,6 @@
 			text: {
 				body: '',
 				$body_type: 'textarea'
-			},
-			two_columns: {
-				$left_column_size: 12,
-				$right_column_size: 12,
-				$left_column_expander: true,
-				$right_column_expander: true,
-				left_column: [],
-				right_column: []
 			}
 		}
 	},
@@ -51,29 +43,29 @@
 		$title_type: 'title',
 		position: {
 			size: {
-				full: 'wd-full',
-				half: 'wd-half',
-				third: 'wd-third'
+				full: {classes:['wd-full']},
+				half: {classes:['wd-half']},
+				third: {classes:['wd-third']}
 			}
 		},
 		text: {
 			alignment: {
-				default: 'txt-al-justify',
-				left: 'txt-al-left',
-				right: 'txt-al-right',
-				center: 'txt-al-center',
-				justify: 'txt-al-justify'
+				default: {classes:['txt-al-justify']},
+				left: {classes:['txt-al-left']},
+				right: {classes:['txt-al-right']},
+				center: {classes:['txt-al-center']},
+				justify: {classes:['txt-al-justify']}
 			},
 			size: {
-				normal: 'txt-sz-normal',
-				big: 'txt-sz-big',
-				huge: 'txt-sz-huge'
+				normal: {classes:['txt-sz-normal']},
+				big: {classes:['txt-sz-big']},
+				huge: {classes:['txt-sz-huge']}
 			}
 		},
 		color: {
-			default: '',
-			accent: 'col-accent',
-			trim: 'col-trim'
+			default: {classes:['']},
+			accent: {classes:['col-accent']},
+			trim: {classes:['col-trim']}
 		},
 		special: {
 			headers: {

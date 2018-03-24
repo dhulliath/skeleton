@@ -1,4 +1,4 @@
-@each $col, $cval in $colors {
+@each $col, $cval in map-get($theme, color) {
 	@each $app, $akey in $color-applications {
 		.#{$app}-col-#{$col} {
 			#{$akey}: #{$cval};
@@ -6,13 +6,13 @@
 	}
 }
 
-@each $value in $text-alignments {
+@each $value in map-get(map-get($theme, 'text'), 'alignments') {
 	.txt-al-#{$value} {
 		text-align: #{$value};
 	}
 }
 
-@each $name, $value in $text-sizes {
+@each $name, $value in map-get(map-get($theme, 'text'), 'sizes') {
 	.txt-sz-#{$name} {
 		text-size: #{$value};
 	}
@@ -21,5 +21,25 @@
 @each $name, $value in $widths {
 	.wd-#{$name} {
 		width: $value;
+	}
+}
+
+@each $name, $value in map-get($theme,margins) {
+	.mrgn-#{$name} {
+		margin: $value;
+	}
+}
+
+@mixin view($port) {
+	@if map-has-key($viewports, $port) {
+		@media (min-width: nth(map-get($viewports, $port), 1)) and (max-width: nth(map-get($viewports, $port), 2)) {
+			@content
+		}
+	}
+}
+
+@include view(desktop) {
+	.test {
+		content:' checkit';
 	}
 }
