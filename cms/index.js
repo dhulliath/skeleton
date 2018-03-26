@@ -1,6 +1,6 @@
 ({
-	greeting: 'you!',
-	superlative: 'nice',
+	greeting: '',
+	superlative: '',
 	$sections_templatitator: '@@global.templates.sections',
 	$sections_size: 12,
 	sections: [
@@ -11,14 +11,18 @@
 			pieces: [
 				{
 					header: 'Header Text Here',
-					$style_expander: true,
-					style: {
-						$text_size: 4,
-						text: {
-							color: '@@global.styling.color.accent',
-							alignment: '@@global.styling.text.alignment.justify'
-						}
-					}
+					header_size: '@@global._styling.special.headers.middle',
+					style: '@@global.styles.header_one'
+				},
+				{
+					lorem: 'Ipsum Lorem Paragraph',
+					$lorem_type: 'title',
+					style: '@@global.styles.body_one'
+				},
+				{
+					lorem: 'Ipsum Lorem Paragraph',
+					$lorem_type: 'title',
+					style: '@@global.styles.body_two'
 				}
 			]
 		}

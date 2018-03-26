@@ -1,7 +1,7 @@
 $theme: (
   color: (
-    accent: blue,
-    trim: pink
+    accent: #000066,
+    trim: #ff0066
   ),
   margins: (
     small: 1em,
@@ -9,12 +9,19 @@ $theme: (
     large: 3em,
     huge: 4em
   ),
+  rounding: (
+    small: 1em,
+    medium: 2em,
+    large: 3em,
+    circle: 50%
+  ),
   text: (
     alignments: (left, right, center, justify),
     sizes: (
       normal: 1em,
       medium: 2em,
       large: 3em
-    )
+    ),
+    fonts: (Oswald, Comfortaa, Dosis, Padauk)
   )
 );

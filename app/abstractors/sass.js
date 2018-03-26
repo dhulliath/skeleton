@@ -4,7 +4,7 @@ const Readable = require('stream').Readable
 const path = require('path')
 
 const flat_helpers = require(enduro.enduro_path + '/libs/flat_db/flat_helpers')
-const gulp_tasks = require(enduro.enduro_path + '/libs/build_tools/gulp_tasks')
+//const gulp_tasks = require(enduro.enduro_path + '/libs/build_tools/gulp_tasks')
 
 
 const abstractor = function () {}
@@ -31,9 +31,7 @@ abstractor.prototype.abstract = function (context) {
 		if (context.sass_file) {
 			let targetFile = path.join(enduro.project_path, 'assets', 'css', context.sass_file+'.scss')
 			flat_helpers.ensure_directory_existence(targetFile)
-			jsStream.pipe(jsonSass({prefix: prefix})).pipe(fs.createWriteStream(targetFile).on('finish', function() {
-				gulp_tasks.task('production', ['css_handler'])
-			}))
+			jsStream.pipe(jsonSass({prefix: prefix})).pipe(fs.createWriteStream(targetFile))
 		}
 		return resolve()
 

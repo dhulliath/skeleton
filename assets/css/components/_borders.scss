@@ -1,0 +1,11 @@
+@each $value in $border-edges {
+	.bdr-#{$value} {
+		border-#{$value}-width: 1px;
+		border-#{$value}-style: solid;
+	}
+}
+.bdr-all {
+    @each $value in $border-edges {
+        @extend .bdr-#{$value};
+    }
+}

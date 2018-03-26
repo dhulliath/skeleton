@@ -1,0 +1,7 @@
+@each $col, $cval in map-get($theme, color) {
+	@each $app, $akey in $color-applications {
+		.#{$app}-col-#{$col} {
+			#{$akey}: #{$cval};
+		} 
+	}
+}

@@ -1,20 +1,6 @@
-@each $col, $cval in map-get($theme, color) {
-	@each $app, $akey in $color-applications {
-		.#{$app}-col-#{$col} {
-			#{$akey}: #{$cval};
-		} 
-	}
-}
-
-@each $value in map-get(map-get($theme, 'text'), 'alignments') {
-	.txt-al-#{$value} {
-		text-align: #{$value};
-	}
-}
-
-@each $name, $value in map-get(map-get($theme, 'text'), 'sizes') {
-	.txt-sz-#{$name} {
-		text-size: #{$value};
+@each $name, $value in map-get($theme, 'rounding') {
+	.bdr-rnd-#{$name} {
+		border-radius: #{$value};
 	}
 }
 

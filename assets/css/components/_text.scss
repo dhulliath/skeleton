@@ -1,0 +1,18 @@
+@each $value in map-get(map-get($theme, 'text'), 'alignments') {
+	.txt-al-#{$value} {
+		text-align: #{$value};
+	}
+}
+
+@each $name, $value in map-get(map-get($theme, 'text'), 'sizes') {
+	.txt-sz-#{$name} {
+		font-size: #{$value};
+	}
+}
+
+@each $value in map-get(map-get($theme, 'text'), 'fonts') {
+    @import url('https://fonts.googleapis.com/css?family=#{$value}');
+    .font-#{$value} {
+        font-family: '#{$value}';
+    }
+}

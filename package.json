@@ -1,18 +1,20 @@
 {
-	"name": "meluasite",
-	"version": "1.0.0",
-	"description": "",
-	"main": "assets/vendor/enduro/index.js",
-	"scripts": {
-		"start": "node_modules/.bin/enduro start",
-		"dev": "node_modules/.bin/enduro dev"
-	},
-	"author": "Peter Olejniczak",
-	"license": "private",
-	"private": true,
-	"dependencies": {
-		"enduro": "*",
-		"json-sass": "^1.3.5",
-		"marked": "^0.3.18"
-	}
+  "name": "meluasite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assets/vendor/enduro/index.js",
+  "scripts": {
+    "start": "node_modules/.bin/enduro start",
+    "dev": "node_modules/.bin/enduro dev",
+    "render": "node_modules/.bin/enduro render"
+  },
+  "author": "Peter Olejniczak",
+  "license": "private",
+  "private": true,
+  "dependencies": {
+    "deepmerge": "^2.1.0",
+    "enduro": "*",
+    "json-sass": "^1.3.5",
+    "marked": "^0.3.18"
+  }
 }
