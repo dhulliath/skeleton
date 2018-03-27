@@ -3,7 +3,7 @@ marked.setOptions({
 	renderer: new marked.Renderer(),
 	gfm: true,
 	tables: true,
-	breaks: false,
+	breaks: true,
 	pedantic: true,
 	sanitize: true,
 	smartLists: true,
