@@ -52,8 +52,8 @@
 				$positioning_noframe: true,
 				positioning: {
 					anchor: '@@global._styling.position.anchor.left',
-					size: '@@global._styling.position.size.full',
-					margin: ''
+					margin: '@@global._styling.position.margin.none',
+					size: '@@global._styling.position.size.full'
 				},
 				$decorations_size: 4,
 				$decorations_noframe: true,
@@ -79,6 +79,7 @@
 				$positioning_noframe: true,
 				positioning: {
 					anchor: '@@global._styling.position.anchor.left',
+					margin: '@@global._styling.position.margin.none',
 					size: '@@global._styling.position.size.full'
 				},
 				$decorations_size: 4,
@@ -105,6 +106,7 @@
 				$positioning_noframe: true,
 				positioning: {
 					anchor: '@@global._styling.position.anchor.left',
+					margin: '@@global._styling.position.margin.none',
 					size: '@@global._styling.position.size.full'
 				},
 				$decorations_size: 4,
@@ -131,6 +133,7 @@
 				$positioning_noframe: true,
 				positioning: {
 					anchor: '@@global._styling.position.anchor.left',
+					margin: '@@global._styling.position.margin.none',
 					size: '@@global._styling.position.size.full'
 				},
 				$decorations_size: 4,
@@ -157,6 +160,7 @@
 				$positioning_noframe: true,
 				positioning: {
 					anchor: '@@global._styling.position.anchor.left',
+					margin: '@@global._styling.position.margin.none',
 					size: '@@global._styling.position.size.full'
 				},
 				$decorations_size: 4,
@@ -183,6 +187,88 @@
 				$positioning_noframe: true,
 				positioning: {
 					anchor: '@@global._styling.position.anchor.left',
+					margin: '@@global._styling.position.margin.none',
+					size: '@@global._styling.position.size.full'
+				},
+				$decorations_size: 4,
+				$decorations_noframe: true,
+				decorations: {
+					background_color: '@@global._styling.color.default',
+					border: '@@global._styling.decorations.border.none',
+					border_color: '@@global._styling.color.default',
+					rounding: '@@global._styling.decorations.rounding.none'
+				}
+			},
+			$styling_expander: true
+		},
+		aside_one: {
+			styling: {
+				$text_size: 4,
+				$text_noframe: true,
+				text: {
+					color: '@@global._styling.color.default',
+					alignment: '@@global._styling.text.alignment.default',
+					font: ''
+				},
+				$positioning_size: 4,
+				$positioning_noframe: true,
+				positioning: {
+					anchor: '@@global._styling.position.anchor.right',
+					margin: '@@global._styling.position.margin.small',
+					size: '@@global._styling.position.size.third'
+				},
+				$decorations_size: 4,
+				$decorations_noframe: true,
+				decorations: {
+					background_color: '@@global._styling.color.default',
+					border: '@@global._styling.decorations.border.none',
+					border_color: '@@global._styling.color.default',
+					rounding: '@@global._styling.decorations.rounding.none'
+				}
+			},
+			$styling_expander: true
+		},
+		aside_two: {
+			styling: {
+				$text_size: 4,
+				$text_noframe: true,
+				text: {
+					color: '@@global._styling.color.default',
+					alignment: '@@global._styling.text.alignment.default',
+					font: ''
+				},
+				$positioning_size: 4,
+				$positioning_noframe: true,
+				positioning: {
+					anchor: '@@global._styling.position.anchor.left',
+					margin: '@@global._styling.position.margin.none',
+					size: '@@global._styling.position.size.full'
+				},
+				$decorations_size: 4,
+				$decorations_noframe: true,
+				decorations: {
+					background_color: '@@global._styling.color.default',
+					border: '@@global._styling.decorations.border.none',
+					border_color: '@@global._styling.color.default',
+					rounding: '@@global._styling.decorations.rounding.none'
+				}
+			},
+			$styling_expander: true
+		},
+		aside_three: {
+			styling: {
+				$text_size: 4,
+				$text_noframe: true,
+				text: {
+					color: '@@global._styling.color.default',
+					alignment: '@@global._styling.text.alignment.default',
+					font: ''
+				},
+				$positioning_size: 4,
+				$positioning_noframe: true,
+				positioning: {
+					anchor: '@@global._styling.position.anchor.left',
+					margin: '@@global._styling.position.margin.none',
 					size: '@@global._styling.position.size.full'
 				},
 				$decorations_size: 4,
@@ -225,6 +311,17 @@
 					classes: [
 						'txt-al-justify'
 					]
+				}
+			},
+			line_height: {
+				single: {
+					classes: ['txt-lh-single']
+				},
+				one_and_half: {
+					classes: ['txt-lh-singlehalf']
+				},
+				double: {
+					classes: ['txt-lh-double']
 				}
 			},
 			size: {
@@ -323,6 +420,9 @@
 				}
 			},
 			margin: {
+				none: {
+					classes: []
+				},
 				small: {
 					classes: [
 						'mrgn-small'

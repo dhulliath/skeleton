@@ -16,6 +16,7 @@ abstractor.prototype.abstract = function (context) {
             $positioning_noframe: true,
             positioning: {
                 anchor: '@@global._styling.position.anchor.left',
+                margin: '@@global._styling.position.margin.none',
                 size: '@@global._styling.position.size.full'
             },
             $decorations_size: 4,

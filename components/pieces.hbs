@@ -1,7 +1,5 @@
 {{#each pieces}}
 <div class="{{>styleclasses}}{{#with style}}{{>styleclasses}}{{/with}}">
-{{#if header}}<{{header_size}}>{{header}}</{{header_size}}>{{/if}}
-{{#if body}}{{{marked body}}}{{/if}}
-{{#if lorem}}{{lorem 200}}{{/if}}
+	{{#if header}}<{{header_size}}>{{header}}</{{header_size}}>{{/if}}{{#if body}}{{{marked body}}}{{/if}}{{#if lorem}}{{lorem 200}}{{/if}}
 </div>
 {{/each}}

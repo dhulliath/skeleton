@@ -1,5 +1,22 @@
 ({
 	company_name: 'something',
+	testing: [
+		{
+			name: 'test',
+			value: 'green'
+		},
+		{
+			name: 'one',
+			value: 'purple'
+		},
+		{
+			name: 'two',
+			value: 'blue'
+		}
+	],
+	optionated: {
+		testing: 'name'
+	},
 	$templates_hidden: true,
 	templates: {
 		sections: {
@@ -35,6 +52,20 @@
 				$lorem_type: 'title',
 				style: '@@global.styles.body_two'
 			}
+		}
+	},
+	testing_optionated: {
+		test: {
+			name: 'test',
+			value: 'green'
+		},
+		one: {
+			name: 'one',
+			value: 'purple'
+		},
+		two: {
+			name: 'two',
+			value: 'blue'
 		}
 	}
 })

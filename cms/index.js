@@ -22,6 +22,11 @@
 				{
 					lorem: 'Ipsum Lorem Paragraph',
 					$lorem_type: 'title',
+					style: '@@global.styles.aside_one'
+				},
+				{
+					lorem: 'Ipsum Lorem Paragraph',
+					$lorem_type: 'title',
 					style: '@@global.styles.body_two'
 				}
 			]
